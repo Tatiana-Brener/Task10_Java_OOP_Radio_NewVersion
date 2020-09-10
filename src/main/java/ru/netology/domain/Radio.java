@@ -1,13 +1,8 @@
 package ru.netology.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
 
-
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
+@Getter
 
 public class Radio {
     private int currentRadioStation;
@@ -19,13 +14,40 @@ public class Radio {
     private int minSoundVolume = 0;
     private int maxSoundVolume = 100;
 
-    public void setCurrentRadioStation(int currentRadioStation) {
+    public Radio(int currentRadioStation,
+                 int firstRadioStation,
+                 int lastRadioStation,
+                 int amountRadioStation,
+                 int currentSoundVolume,
+                 int minSoundVolume,
+                 int maxSoundVolume) {
         if (currentRadioStation > lastRadioStation)
             return;
         if (currentRadioStation < firstRadioStation)
             return;
         this.currentRadioStation = currentRadioStation;
+
+        this.firstRadioStation = firstRadioStation;
+        this.lastRadioStation = lastRadioStation;
+        this.amountRadioStation = amountRadioStation;
+
+        if (currentSoundVolume > maxSoundVolume)
+            return;
+        if (currentSoundVolume < minSoundVolume)
+            return;
+        this.currentSoundVolume = currentSoundVolume;
+        this.minSoundVolume = minSoundVolume;
+        this.maxSoundVolume = maxSoundVolume;
     }
+
+
+//    public void setCurrentRadioStation(int currentRadioStation) {
+//        if (currentRadioStation > lastRadioStation)
+//            return;
+//        if (currentRadioStation < firstRadioStation)
+//            return;
+//        this.currentRadioStation = currentRadioStation;
+//    }
 
     public void changeNextRadioStation() {
         if (currentRadioStation == lastRadioStation) {
@@ -44,13 +66,13 @@ public class Radio {
         }
     }
 
-    public void setCurrentSoundVolume(int currentSoundVolume) {
-        if (currentSoundVolume > maxSoundVolume)
-            return;
-        if (currentSoundVolume < minSoundVolume)
-            return;
-        this.currentSoundVolume = currentSoundVolume;
-    }
+//    public void setCurrentSoundVolume(int currentSoundVolume) {
+//        if (currentSoundVolume > maxSoundVolume)
+//            return;
+//        if (currentSoundVolume < minSoundVolume)
+//            return;
+//        this.currentSoundVolume = currentSoundVolume;
+//    }
 
     public void increaseCurrentSoundVolume() {
         if (currentSoundVolume < maxSoundVolume)
