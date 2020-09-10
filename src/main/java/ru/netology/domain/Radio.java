@@ -40,15 +40,6 @@ public class Radio {
         this.maxSoundVolume = maxSoundVolume;
     }
 
-
-//    public void setCurrentRadioStation(int currentRadioStation) {
-//        if (currentRadioStation > lastRadioStation)
-//            return;
-//        if (currentRadioStation < firstRadioStation)
-//            return;
-//        this.currentRadioStation = currentRadioStation;
-//    }
-
     public void changeNextRadioStation() {
         if (currentRadioStation == lastRadioStation) {
             this.currentRadioStation = firstRadioStation;
@@ -65,14 +56,6 @@ public class Radio {
             currentRadioStation--;
         }
     }
-
-//    public void setCurrentSoundVolume(int currentSoundVolume) {
-//        if (currentSoundVolume > maxSoundVolume)
-//            return;
-//        if (currentSoundVolume < minSoundVolume)
-//            return;
-//        this.currentSoundVolume = currentSoundVolume;
-//    }
 
     public void increaseCurrentSoundVolume() {
         if (currentSoundVolume < maxSoundVolume)
