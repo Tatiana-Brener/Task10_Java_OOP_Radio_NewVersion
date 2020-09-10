@@ -1,5 +1,14 @@
 package ru.netology.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+
 public class Radio {
     private int currentRadioStation;
     private int firstRadioStation = 0;
@@ -10,19 +19,12 @@ public class Radio {
     private int minSoundVolume = 0;
     private int maxSoundVolume = 100;
 
-    public Radio(int currentRadioStation,
-                 int firstRadioStation,
-                 int lastRadioStation,
-                 int amountRadioStation) {
+    public void setCurrentRadioStation(int currentRadioStation) {
         if (currentRadioStation > lastRadioStation)
             return;
         if (currentRadioStation < firstRadioStation)
             return;
         this.currentRadioStation = currentRadioStation;
-
-        this.firstRadioStation = firstRadioStation;
-        this.lastRadioStation = lastRadioStation;
-        this.amountRadioStation = amountRadioStation;
     }
 
     public void changeNextRadioStation() {
@@ -42,32 +44,12 @@ public class Radio {
         }
     }
 
-    public int getCurrentRadioStation() {
-        return currentRadioStation;
-    }
-
-    public int getFirstRadioStation() {
-        return firstRadioStation;
-    }
-
-    public int getLastRadioStation() {
-        return lastRadioStation;
-    }
-
-    public int getAmountRadioStation() {
-        return amountRadioStation;
-    }
-
-
-
-    public Radio(int currentSoundVolume, int minSoundVolume, int maxSoundVolume) {
+    public void setCurrentSoundVolume(int currentSoundVolume) {
         if (currentSoundVolume > maxSoundVolume)
             return;
         if (currentSoundVolume < minSoundVolume)
             return;
         this.currentSoundVolume = currentSoundVolume;
-        this.minSoundVolume = minSoundVolume;
-        this.maxSoundVolume = maxSoundVolume;
     }
 
     public void increaseCurrentSoundVolume() {
@@ -78,17 +60,5 @@ public class Radio {
     public void decreaseCurrentSoundVolume() {
         if (currentSoundVolume > minSoundVolume)
             currentSoundVolume--;
-    }
-
-    public int getCurrentSoundVolume() {
-        return currentSoundVolume;
-    }
-
-    public int getMinSoundVolume() {
-        return minSoundVolume;
-    }
-
-    public int getMaxSoundVolume() {
-        return maxSoundVolume;
     }
 }

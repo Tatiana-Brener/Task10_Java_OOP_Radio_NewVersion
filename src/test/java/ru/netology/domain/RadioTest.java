@@ -8,10 +8,14 @@ class RadioTest {
 
     @Test
     public void shouldChangeAmountRadioStation() {
-        Radio radio = new Radio(0,
+        Radio radio = new Radio(
+                0,
                 0,
                 15,
-                15);
+                15,
+                0,
+                0,
+                100);
 
         assertEquals(15, radio.getAmountRadioStation());
     }
@@ -22,7 +26,10 @@ class RadioTest {
                 8,
                 0,
                 15,
-                15);
+                15,
+                0,
+                0,
+                100);
 
         assertEquals(8, radio.getCurrentRadioStation());
     }
@@ -33,7 +40,10 @@ class RadioTest {
                 0,
                 0,
                 15,
-                15);
+                15,
+                0,
+                0,
+                100);
 
         assertEquals(0, radio.getFirstRadioStation());
     }
@@ -44,7 +54,10 @@ class RadioTest {
                 -1,
                 0,
                 15,
-                15);
+                15,
+                0,
+                0,
+                100);
 
         assertEquals(0, radio.getCurrentRadioStation());
     }
@@ -55,7 +68,10 @@ class RadioTest {
                 15,
                 0,
                 15,
-                15);
+                15,
+                0,
+                0,
+                100);
 
         assertEquals(15, radio.getLastRadioStation());
     }
@@ -66,7 +82,10 @@ class RadioTest {
                 16,
                 0,
                 15,
-                15);
+                15,
+                0,
+                0,
+                100);
 
         assertEquals(0, radio.getCurrentRadioStation());
     }
@@ -77,12 +96,14 @@ class RadioTest {
                 14,
                 0,
                 15,
-                15);
+                15,
+                0,
+                0,
+                100);
 
         radio.changeNextRadioStation();
         assertEquals(15, radio.getCurrentRadioStation());
     }
-
 
     @Test
     public void shouldChangeNextRadioStationBetweenLastFirst() {
@@ -90,7 +111,10 @@ class RadioTest {
                 10,
                 0,
                 15,
-                15);
+                15,
+                0,
+                0,
+                100);
 
         radio.changeNextRadioStation();
         assertEquals(11, radio.getCurrentRadioStation());
@@ -102,7 +126,10 @@ class RadioTest {
                 0,
                 0,
                 15,
-                15);
+                15,
+                0,
+                0,
+                100);
 
         radio.changeNextRadioStation();
         assertEquals(1, radio.getCurrentRadioStation());
@@ -114,7 +141,10 @@ class RadioTest {
                 15,
                 0,
                 15,
-                15);
+                15,
+                0,
+                0,
+                100);
 
         radio.changeNextRadioStation();
         assertEquals(0, radio.getCurrentRadioStation());
@@ -126,7 +156,10 @@ class RadioTest {
                 1,
                 0,
                 15,
-                15);
+                15,
+                0,
+                0,
+                100);
 
         radio.changePrevRadioStation();
         assertEquals(0, radio.getCurrentRadioStation());
@@ -138,7 +171,10 @@ class RadioTest {
                 5,
                 0,
                 15,
-                15);
+                15,
+                0,
+                0,
+                100);
 
         radio.changePrevRadioStation();
         assertEquals(4, radio.getCurrentRadioStation());
@@ -150,7 +186,10 @@ class RadioTest {
                 15,
                 0,
                 15,
-                15);
+                15,
+                0,
+                0,
+                100);
 
         radio.changePrevRadioStation();
         assertEquals(14, radio.getCurrentRadioStation());
@@ -162,7 +201,10 @@ class RadioTest {
                 0,
                 0,
                 15,
-                15);
+                15,
+                0,
+                0,
+                100);
 
         radio.changePrevRadioStation();
         assertEquals(15, radio.getCurrentRadioStation());
@@ -171,6 +213,10 @@ class RadioTest {
     @Test
     public void shouldSetCurrentSoundVolume() {
         Radio radio = new Radio(
+                0,
+                0,
+                15,
+                15,
                 8,
                 0,
                 100);
@@ -181,6 +227,10 @@ class RadioTest {
     @Test
     public void shouldSetCurrentSoundVolumeMax() {
         Radio radio = new Radio(
+                0,
+                0,
+                15,
+                15,
                 100,
                 0,
                 100);
@@ -191,6 +241,10 @@ class RadioTest {
     @Test
     public void shouldSetCurrentSoundVolumeOverMax() {
         Radio radio = new Radio(
+                0,
+                0,
+                15,
+                15,
                 101,
                 0,
                 100);
@@ -203,6 +257,10 @@ class RadioTest {
         Radio radio = new Radio(
                 0,
                 0,
+                15,
+                15,
+                0,
+                0,
                 100);
 
         assertEquals(0, radio.getMinSoundVolume());
@@ -211,6 +269,10 @@ class RadioTest {
     @Test
     public void shouldSetCurrentSoundVolumeUnderMin() {
         Radio radio = new Radio(
+                0,
+                0,
+                15,
+                15,
                 -1,
                 0,
                 100);
@@ -221,6 +283,10 @@ class RadioTest {
     @Test
     public void shouldIncreaseCurrentSoundVolume() {
         Radio radio = new Radio(
+                0,
+                0,
+                15,
+                15,
                 50,
                 0,
                 100);
@@ -232,6 +298,10 @@ class RadioTest {
     @Test
     public void shouldIncreaseCurrentSoundVolumeMax() {
         Radio radio = new Radio(
+                0,
+                0,
+                15,
+                15,
                 100,
                 0,
                 100);
@@ -243,6 +313,10 @@ class RadioTest {
     @Test
     public void shouldDecreaseCurrentSoundVolume() {
         Radio radio = new Radio(
+                0,
+                0,
+                15,
+                15,
                 55,
                 0,
                 100);
@@ -254,6 +328,10 @@ class RadioTest {
     @Test
     public void shouldDecreaseCurrentSoundVolumeMin() {
         Radio radio = new Radio(
+                0,
+                0,
+                15,
+                15,
                 0,
                 0,
                 100);
